@@ -1,0 +1,430 @@
+<html>
+	<head>
+  <script src="jquery-3.4.1.min.js"></script>	
+  
+
+<script>
+
+ $( document ).ready(function() {
+ 
+    $('.symbol').click(function(){
+		$(this).toggleClass('clicked');
+	});
+	
+}); 
+
+
+
+function ClearStyles(){
+
+ $('.symbol').removeClass('clicked');
+
+document.getElementById('t1').style.backgroundColor = null;
+document.getElementById('t2').style.backgroundColor = null;
+document.getElementById('t3').style.backgroundColor = null;
+document.getElementById('t4').style.backgroundColor = null;
+document.getElementById('t5').style.backgroundColor = null;
+
+document.getElementById('sy1').style.backgroundColor = null;
+document.getElementById('sy2').style.backgroundColor = null;
+document.getElementById('sy3').style.backgroundColor = null;
+document.getElementById('sy1').style.color = null;
+document.getElementById('sy2').style.color = null;
+document.getElementById('sy3').style.color = null;
+
+document.getElementById('s1').style.backgroundColor = null;
+document.getElementById('s2').style.backgroundColor = null;
+document.getElementById('s3').style.backgroundColor = null;
+document.getElementById('s4').style.backgroundColor = null;
+document.getElementById('s5').style.backgroundColor = null;
+
+
+	if (document.getElementById("random_verb").checked == true){
+
+
+		  
+		} else {
+		
+				document.getElementById('input_verb').value = null;
+
+	}
+
+
+
+}
+
+
+function RandomCombination() {
+
+ClearStyles();
+SortTextAreaArray();
+
+
+var symbolArray = ["sy1","sy2","sy3"];
+var symbolItem = symbolArray[Math.floor(Math.random()*symbolArray.length)];
+
+document.getElementById(symbolItem).style.backgroundColor  = 'black';
+document.getElementById(symbolItem).style.color  = 'white';
+
+
+var tenseArray = ["t1","t2","t3","t4","t5"];
+var tenselItem = tenseArray[Math.floor(Math.random()*tenseArray.length)];
+
+document.getElementById(tenselItem).style.backgroundColor  = 'black';
+document.getElementById(tenselItem).style.color  = 'white';
+
+var subjectArray = ["s1","s2","s3","s4","s5"];
+var subjectItem = subjectArray[Math.floor(Math.random()*subjectArray.length)];
+
+document.getElementById(subjectItem).style.backgroundColor  = 'black';
+document.getElementById(subjectItem).style.color  = 'white';
+  
+}
+
+
+
+function SortTextAreaArray(){
+
+	if (document.getElementById("random_verb").checked == true){
+
+
+	  
+	} else {
+
+		document.getElementById('input_verb').value = null;
+		var valuesTextArea, sorted, i;
+
+		TextAreaArray = document.getElementById("list_of_verbs");	
+		valuesTextArea = TextAreaArray.value.split(',');
+		
+		var resultVerb = valuesTextArea[Math.floor(Math.random()*valuesTextArea.length)];
+
+		var input_verb = document.getElementById("input_verb");
+		input_verb.value = resultVerb; 
+		
+		
+	}
+
+
+
+	
+}
+
+
+</script> 
+<style>
+
+
+.general {
+	width: 98%;
+	float: left;
+	/*background-color: yellow;*/
+	padding: 5px 5px 5px 5px ;
+	margin: 0px;
+	font-family: verdana;
+	font-size: 20px;
+}
+.tense_structure{
+	width: 25%;
+	float: left;
+	/*background-color: blue;*/
+	padding: 5px 5px 5px 5px ;
+	margin: 2px 20px 2px 2px;
+	min-width: 300px;
+	border: solid 1px #666666;
+	min-height: 311px;
+}
+.type{
+	width: 25%;
+	float: left;
+	/*background-color: blue;*/
+	padding: 5px 5px 5px 5px ;
+	margin: 2px 20px 2px 2px;
+	min-width: 300px;
+	border: solid 1px #666666;
+	min-height: 311px;
+}
+.subject{
+	width: 20%;
+	float: left;
+	/*background-color: blue;*/
+	padding: 5px 5px 5px 5px ;
+	margin: 2px 20px 2px 2px;
+	min-width: 300px;
+	border: solid 1px #666666;
+	min-height: 311px;
+}
+.verb_box{
+	width: 98%;
+	float: left;
+	/*background-color: blue;*/
+	padding: 5px 5px 5px 5px ;
+	margin: 2px;
+
+}
+.type_line{
+float:left;
+width: 100%;
+padding: 5px 0px 5px 0px;
+
+
+}
+.title{
+float:left;
+width: 100%;
+padding: 8px 0px 8px 0px;
+background-color: #4f6a9a;
+color: #FFFFFF;
+text-align: center;
+font-weight: bold;
+font-size: 20px;
+margin-bottom: 5px;
+}
+
+.symbol{
+float:left;
+padding: 5px;
+border: solid 2px #000000;
+border-radius: 30px;
+width: 30px;
+height: 30px;
+text-align: center;
+margin-left: 10px;
+}
+
+
+
+.text_line{
+float:left;
+padding: 9px 5px 6px 8px;
+text-align: left;
+/*background-color: pink;*/
+}
+
+.button{
+float:left;
+width: 130px;
+padding: 9px 0px 9px 0px;
+background-color: #bcc5d4;
+border: none;
+color: white;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 20px;
+margin-left: 5px;
+font-weight: bold;
+
+}
+
+
+.button:hover{
+float:left;
+width: 130px;
+padding: 9px 0px 9px 0px;
+background-color: #4f6a9a;
+border: none;
+color: white;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 20px;
+margin-left: 5px;
+font-weight: bold;
+
+}
+
+
+.button:active{
+float:left;
+width: 130px;
+padding: 9px 0px 9px 0px;
+background-color: #2a374d;
+border: none;
+color: white;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 20px;
+margin-left: 5px;
+font-weight: bold;
+
+}
+
+.verb_text{
+	float:left;
+	width: 300px;
+	padding: 7px 0px 8px 0px;
+	background-color: #FFFFFF;
+	border: solid 2px #4f6a9a;
+	color: #000;
+	text-align: center;
+	font-weight: bold;
+	text-transform: uppercase;
+	display: inline-block;
+	font-size: 20px;
+}
+
+.verb_label{
+	float:left;
+	width: 100px;
+	padding: 7px 0px 7px 0px;
+	background-color: #4f6a9a;
+	border: solid 2px #4f6a9a;
+	color: #FFFFFF;
+	text-align: center;
+	font-weight: bold;
+	text-transform: uppercase;
+	display: inline-block;
+	font-size: 20px;
+}
+
+.verbs_list{
+
+float:left;
+width: 80%;
+border: solid 1px #4f6a9a;
+font-size: 12px;
+color: #dadada;
+}
+
+
+.verbs_list:active{
+
+float:left;
+width: 80%;
+border: solid 1px #4f6a9a;
+font-size: 12px;
+color: #000000;
+}
+.verbs_list:hover{
+
+float:left;
+width: 80%;
+border: solid 1px #4f6a9a;
+font-size: 12px;
+color: #000000;
+}
+
+.CheckBoxRandomVerb{
+
+float:left;
+width: 120px;
+padding: 10px 12px 10px 1px;
+background-color: #4f6a9a;
+border: solid 2px #4f6a9a;
+color: #FFFFFF;
+text-align: center;
+font-weight: bold;
+text-transform: uppercase;
+display: inline-block;
+font-size: 12px;
+
+}
+.CheckBoxRandomVerb label{
+float:right;
+margin-top: 0px;
+
+
+}
+
+
+.num_words_text{
+	float:left;
+	width: 70px;
+	padding: 7px 0px 8px 0px;
+	background-color: #FFFFFF;
+	border: solid 2px #4f6a9a;
+	color: #000;
+	text-align: center;
+	font-weight: bold;
+	text-transform: uppercase;
+	display: inline-block;
+	font-size: 20px;
+	margin-right: 10px;
+}
+
+.num_words_label{
+	float:left;
+	width: 100px;
+	padding: 7px 0px 7px 0px;
+	background-color: #4f6a9a;
+	border: solid 2px #4f6a9a;
+	color: #FFFFFF;
+	text-align: center;
+	font-weight: bold;
+	text-transform: uppercase;
+	display: inline-block;
+	font-size: 20px;
+}
+
+.clicked {
+
+  background-color: #622929;
+  color: #ffffff;
+  
+}
+</style>
+
+	</head>
+	<body>
+<div class="general">
+	
+		<div class="tense_structure" >
+			<div class="title">TENSE/STRUCTURE</div>
+			<div>
+				<div class="type_line"><div class="symbol" id="t1"></div><div class="text_line">PRESENT PERFECT </div></div>
+				<div class="type_line"><div class="symbol" id="t2"></div><div class="text_line">PAST PERFECT</div></div>
+				<div class="type_line"><div class="symbol" id="t3"></div><div class="text_line">1st CONDITIONAL</div></div>
+				<div class="type_line"><div class="symbol" id="t4"></div><div class="text_line">2nd CONDITIONAL</div></div>
+				<div class="type_line"><div class="symbol" id="t5"></div><div class="text_line">FUTURE</div></div>
+			</div>
+		</div>
+		
+		<div class="type" >
+			<div class="title">TYPE</div>
+			<div>
+				<div class="type_line"><div class="symbol" id="sy1">!</div><div class="text_line">AFIRMATIVE</div></div>
+				<div class="type_line"><div class="symbol" id="sy2">x</div><div class="text_line">NEGATIVE</div></div>
+				<div class="type_line"><div class="symbol" id="sy3">?</div><div class="text_line">INTERROGATIVE</div></div>
+			</div>
+		</div>
+
+		<div class="subject" >
+			<div class="title">SUBJECT</div>	
+			<div>
+				<div class="type_line"><div class="symbol" id="s1"></div><div class="text_line">I</div></div>
+				<div class="type_line"><div class="symbol" id="s2"></div><div class="text_line">YOU</div></div>
+				<div class="type_line"><div class="symbol" id="s3"></div><div class="text_line">HE, SHE, IT</div></div>
+				<div class="type_line"><div class="symbol" id="s4"></div><div class="text_line">THEY</div></div>
+				<div class="type_line"><div class="symbol" id="s5"></div><div class="text_line">WE</div></div>
+			</div>
+		</div>
+
+		
+		<div class="verb_box" >
+			<div class="num_words_label">WORDS:</div>
+<input class="num_words_text" type="text" id="num_words"/>		
+			<div class="verb_label">VERB:</div>
+			
+			<input class="verb_text" type="text" id="input_verb"/>
+			
+
+			
+			<div class="CheckBoxRandomVerb">
+				<input type="checkbox" id="random_verb" name="random_verb" value="y"><label for="random_verb">Write verb</label>
+			</div>
+			
+
+			<button type="button" onclick="RandomCombination()" class="button">RUN</button>
+			<button type="button" onclick="ClearStyles()" class="button">CLEAR ALL</button>							
+		</div>
+<div class="verb_box" >
+<textarea class="verbs_list" id="list_of_verbs" rows="4">
+be,have,do,say,go,get,make,know,think,take,see,come,want,look,use,find,give,tell,work,call,try,ask,need,feel,become,leave,put,mean,keep,let,begin,seem,help,talk,turn,start,show,hear,play,run,move,like,live,believe,hold,bring,happen,write,provide,sit,stand,lose,pay,meet,include,continue,set,learn,change,lead,understand,watch,follow,stop,create,speak,read,allow,add,spend,grow,open,walk,win,offer,remember,love,consider,appear,buy,wait,serve,die,send,expect,build,stay,fall,cut,reach,kill,remain,suggest,raise,pass,sell,require,report,decide,pull
+</textarea>
+</div>
+		
+</div>		
+	</body>
+</html>
