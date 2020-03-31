@@ -1,4 +1,4 @@
-<html> 
+<html>
 	<head>
   <script src="jquery-3.4.1.min.js"></script>	
   
@@ -63,21 +63,24 @@ SortTextAreaArray();
 var symbolArray = ["sy1","sy2","sy3"];
 var symbolItem = symbolArray[Math.floor(Math.random()*symbolArray.length)];
 
-document.getElementById(symbolItem).style.backgroundColor  = 'black';
-document.getElementById(symbolItem).style.color  = 'white';
+//document.getElementById(symbolItem).style.backgroundColor  = 'black';
+//document.getElementById(symbolItem).style.color  = 'white';
+$(document.getElementById(symbolItem)).toggleClass('clicked');
 
 
 var tenseArray = ["t1","t2","t3","t4","t5"];
 var tenselItem = tenseArray[Math.floor(Math.random()*tenseArray.length)];
 
-document.getElementById(tenselItem).style.backgroundColor  = 'black';
-document.getElementById(tenselItem).style.color  = 'white';
+//document.getElementById(tenselItem).style.backgroundColor  = 'black';
+//document.getElementById(tenselItem).style.color  = 'white';
+$(document.getElementById(tenselItem)).toggleClass('clicked');
 
 var subjectArray = ["s1","s2","s3","s4","s5"];
 var subjectItem = subjectArray[Math.floor(Math.random()*subjectArray.length)];
 
-document.getElementById(subjectItem).style.backgroundColor  = 'black';
-document.getElementById(subjectItem).style.color  = 'white';
+//document.getElementById(subjectItem).style.backgroundColor  = 'black';
+//document.getElementById(subjectItem).style.color  = 'white';
+$(document.getElementById(subjectItem)).toggleClass('clicked');
   
 }
 
